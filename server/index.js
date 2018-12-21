@@ -3,7 +3,7 @@ const {json} = require('body-parser');
 const express = require('express');
 const massive = require('massive');
 const cors = require('cors');
-const { getHouses, addHouse } = require('./controllers/controller')
+const { getHouses, addHouse, deleteHouse, getHouse } = require('./controllers/controller')
 const port = 4000;
 const app = express();
 
@@ -19,5 +19,7 @@ massive(process.env.CONNECTION_STRING)
 
 app.get('/api/houses', getHouses)
 app.post('/api/houses', addHouse)
+app.delete('/api/houses/:id', deleteHouse)
+app.get('/api/houselisting/:id', getHouse)
 
 app.listen(port, console.log(`Listening on ${port}...`));

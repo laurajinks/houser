@@ -20,11 +20,19 @@ export default class Dashboard extends Component {
         .catch(err => console.log(err));
     }
 
+    componentDidUpdate() {
+        axios.get(`${url}/api/houses`)
+        .then(response => {
+            this.setState({houses: response.data});
+        })
+        .catch(err => console.log(err));
+        }
+
     render () {
         return (
             <div>
                 <div>Dashboard</div>
-                <Link to='/wizard'><button>Add New Property</button></Link>
+                <Link to='/wizardone'><button>Add New Property</button></Link>
                 {this.state.houses.map(house => (
                     <House key={house.id}
                     id={house.id}

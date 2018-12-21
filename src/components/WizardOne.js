@@ -5,7 +5,7 @@ import { updateName, updateAddress, updateCity, updateState, updateZipCode} from
 import axios from 'axios';
 
 
-class Wizard extends Component {
+class WizardOne extends Component {
     constructor (props) {
         super (props);
 
@@ -21,7 +21,7 @@ class Wizard extends Component {
         return (
             <div>
                 <h1>Add new Home</h1>
-                <p>House Name:</p>
+                <p>Property Name:</p>
                 <input placeholder="House name" type="text" onChange={(e) => this.props.updateName(e.target.value)}/>
                 <p>Address:</p>
                 <input placeholder="Address" type="text" onChange={(e) => this.props.updateAddress(e.target.value)}/>
@@ -31,6 +31,7 @@ class Wizard extends Component {
                 <input placeholder="State" type="text" onChange={(e) => this.props.updateState(e.target.value)}/>
                 <p>Zip Code:</p>
                 <input placeholder="Zip Code" type="text" onChange={(e) => this.props.updateZipCode(e.target.value)}/>
+                <Link to='/wizardtwo'><button>Next >></button></Link>
                 <Link to='/'><button onClick={() => this.addHouse()}>Add +</button></Link>
                 <Link to='/'><button>Cancel</button></Link>
             </div>
@@ -46,4 +47,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { updateName, updateAddress,
-    updateCity, updateState, updateZipCode })(Wizard);
+    updateCity, updateState, updateZipCode })(WizardOne);

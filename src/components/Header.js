@@ -5,8 +5,8 @@ export default class Header extends Component {
     render () {
         return (
             <div>
-                <Link to='/'><button>Dashboard</button></Link>
-                <Link to='/wizard'><button>Add New House</button></Link>
+                <h1>Houser</h1>
+                <Link to='/'>Home</Link>
                 </div>
         )
     }

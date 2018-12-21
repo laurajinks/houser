@@ -14,6 +14,7 @@ const UPDATE_ADDRESS = 'UPDATE_ADDRESS'
 const UPDATE_CITY = 'UPDATE_CITY'
 const UPDATE_STATE = 'UPDATE_STATE'
 const UPDATE_ZIPCODE = 'UPDATE_ZIPCODE'
+const UPDATE_URL = 'UPDATE_URL'
 
 export const updateName = (name) => {
     return {
@@ -50,6 +51,13 @@ export const updateZipCode = (code) => {
     }
 }
 
+export const updateUrl = (url) => {
+    return {
+        type: UPDATE_URL,
+        payload: url
+    }
+}
+
 function reducer(state = initialState, action) {
     switch( action.type ) {
         case UPDATE_NAME: 
@@ -76,6 +84,11 @@ function reducer(state = initialState, action) {
         return {
         ...state,
         zipcode: action.payload
+        }
+        case UPDATE_URL:
+        return {
+        ...state,
+        imgUrl: action.payload
         }
         default:
         return state;
