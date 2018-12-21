@@ -3,7 +3,7 @@ const {json} = require('body-parser');
 const express = require('express');
 const massive = require('massive');
 const cors = require('cors');
-//require controllers
+const { getHouses } = require('./controllers/controller')
 const port = 4000;
 const app = express();
 
@@ -16,5 +16,7 @@ massive(process.env.CONNECTION_STRING)
     console.log('Database Connected');
 })
 .catch(err => console.log(err));
+
+app.get('/api/houses', getHouses)
 
 app.listen(port, console.log(`Listening on ${port}...`));
