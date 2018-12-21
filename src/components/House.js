@@ -1,9 +1,16 @@
-import React,  { Component } from 'react';
+import React from 'react';
 
-export default class House extends Component {
-    render () {
+const House = props => {
         return (
-            <div>House</div>
+            <div className='houseContainer'>
+                <h2>{props.name}</h2>
+                <p>{props.address}</p>
+                <span>{props.city}, </span>
+                <span>{props.stateaddress} </span>
+                <span>{props.zipcode}</span>
+                <button>DELETE</button>
+            </div>
         )
     }
-}
+
+export default House

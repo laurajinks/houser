@@ -2,8 +2,8 @@ const initialState = {
     name: '',
     address: '',
     city: '',
-    addressState: '',
-    zipCode: '',
+    stateaddress: '',
+    zipcode: '',
     imgUrl: '',
     monthlyMortgage: 0,
     recRent: 0
@@ -36,10 +36,10 @@ export const updateCity = (city) => {
     }
 }
 
-export const updateState = (state) => {
+export const updateState = (stateaddress) => {
     return {
         type: UPDATE_STATE,
-        payload: state
+        payload: stateaddress
     }
 }
 
@@ -70,7 +70,12 @@ function reducer(state = initialState, action) {
         case UPDATE_STATE: 
         return {
         ...state,
-        addressState: action.payload
+        stateaddress: action.payload
+        }
+        case UPDATE_ZIPCODE: 
+        return {
+        ...state,
+        zipcode: action.payload
         }
         default:
         return state;

@@ -31,8 +31,8 @@ export default class Dashboard extends Component {
                     name={house.name}
                     address={house.address}
                     city={house.city}
-                    addressState={house.addressState}
-                    zipCode={house.zipCode}/>
+                    stateaddress={house.stateaddress}
+                    zipcode={house.zipcode}/>
                 ))}
             </div>
         )
